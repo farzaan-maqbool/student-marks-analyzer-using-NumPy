@@ -37,3 +37,18 @@ passed=np.all(marks>=40,axis=1)
 print("Pass status : ",passed)
 print("Passed students ",students[passed])
 print("Failed students ",students[~passed])
+
+#Grading System
+
+conditions = [
+    student_average >= 90,
+    student_average >= 80,
+    student_average >= 70,
+    student_average >= 60,
+    student_average < 60
+    
+]
+
+grades = ["A+","A","B","C","D"]
+student_grades=np.select(conditions,grades,default="D")
+print("Student grades",student_grades)
