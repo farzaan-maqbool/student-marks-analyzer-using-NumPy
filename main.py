@@ -52,3 +52,12 @@ conditions = [
 grades = ["A+","A","B","C","D"]
 student_grades=np.select(conditions,grades,default="D")
 print("Student grades",student_grades)
+
+#Rank students from highest to lowest
+
+ranking = np.argsort(student_average)[::-1]
+print("\n Student Rankings")
+for rank, index in enumerate(ranking,start=1):
+    print(f"Rank {rank}: Student {index + 1}"
+          f"- Average : {student_average[index]}"
+          )
