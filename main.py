@@ -55,9 +55,20 @@ print("Student grades",student_grades)
 
 #Rank students from highest to lowest
 
-ranking = np.argsort(student_average)[::-1]
+ranking = np.argsort(student_average)[::-1] #smallest average to largest, then slicing reverses
 print("\n Student Rankings")
 for rank, index in enumerate(ranking,start=1):
     print(f"Rank {rank}: Student {index + 1}"
           f"- Average : {student_average[index]}"
           )
+    
+# Find the top 3 students
+top_three = ranking[:3]
+
+print("\nTOP 3 STUDENTS")
+
+for rank, index in enumerate(top_three, start=1):
+        print(
+            f"Rank {rank}: Student {index + 1} "
+            f"- Average: {student_average[index]:.2f}"
+        )
